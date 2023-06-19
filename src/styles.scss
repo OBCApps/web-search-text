@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+// Center a element 
+.global-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.global-end{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+// Diseño Sombreado
+.sombreado {
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+
+// Design scroll
+.global-scroll{
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+.global-scroll::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.global-scroll::-webkit-scrollbar-thumb {
+  background-color: #888; 
+  border-radius: 4px; 
+}
+
+// Efectos de entrada
+.entrada-efecto {
+  opacity: 0; /* Establece la opacidad inicial en 0 */
+  animation: entrada 0.5s forwards; /* Aplica la animación 'entrada' durante 1 segundo y mantiene el estado final */
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0; /* Estado inicial de la animación */
+    transform: translateY(-20px); /* Desplazamiento inicial */
+  }
+  to {
+    opacity: 1; /* Estado final de la animación */
+    transform: translateY(0); /* Desplazamiento final */
+  }
+}
+
+
+.entrada-derecha {
+  opacity: 0; /* Establece la opacidad inicial en 0 */
+  animation: entrada-derecha 0.5s forwards; /* Aplica la animación 'entrada-derecha' durante 1 segundo y mantiene el estado final */
+}
+
+@keyframes entrada-derecha {
+  from {
+    opacity: 0; /* Estado inicial de la animación */
+    transform: translateX(100%); /* Desplazamiento inicial hacia la derecha */
+  }
+  to {
+    opacity: 1; /* Estado final de la animación */
+    transform: translateX(0); /* Desplazamiento final (sin desplazamiento) */
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.salida-derecha {
+  animation: slideOutRight 1s forwards;
+}
